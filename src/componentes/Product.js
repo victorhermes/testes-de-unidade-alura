@@ -17,9 +17,17 @@ export default class Content extends Component {
             <img src={ImgUm} alt="Natureza" />
           </div>
           <div className="Conteudo">
-            <h1>Produto</h1>
-            <p className="Valor">{this.state.reais}500,00</p>
-            <a href="http://localhost:3000/">Conferir</a>
+            <h1>Notebook com processador i5</h1>
+            <h3>Maior lance:</h3>
+            <p className="ValorMaior">{this.state.reais}500,00</p>
+
+            <h3>Menor lance:</h3>
+            <p className="ValorMenor">{this.state.reais}100,00</p>
+
+            <h3>Maiores lances:</h3>
+            <p className="ValorNeutro">{this.state.reais}400,00</p>
+            <p className="ValorNeutro">{this.state.reais}300,00</p>
+            <p className="ValorNeutro">{this.state.reais}200,00</p>
           </div>
         </section>
       </Fragment>
