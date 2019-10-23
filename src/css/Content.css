@@ -3,20 +3,25 @@ section {
     flex-direction: column;
     align-items: center;
     margin: 50px 20px 50px 20px;
+    width: 500px;
 }
 
 .Cabecalho {
     display: flex;
     text-align: left;
     width: 100%;
-    max-width: 500px;
     margin-bottom: 10px;
+}
+
+.Cabecalho p {
+    margin: 9px 16px 0;
+    font-size: 17px;
+    font-family: monospace;
 }
 
 .Imagem {
     width: 100%;
     height: 500px;
-    max-width: 500px;
     max-height: 500px;
     object-fit: cover;
 }
@@ -28,8 +33,9 @@ section {
     border-radius: 50px;
 }
 
-p {
-    margin: 9px 16px 0;
-    font-size: 17px;
-    font-family: monospace;
+.Curtidas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
