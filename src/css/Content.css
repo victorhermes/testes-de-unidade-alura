@@ -10,6 +10,7 @@ section {
     text-align: left;
     width: 100%;
     max-width: 500px;
+    margin-bottom: 10px;
 }
 
 .Imagem {
@@ -25,4 +26,10 @@ section {
     height: 40px;
     object-fit: cover;
     border-radius: 50px;
+}
+
+p {
+    margin: 9px 16px 0;
+    font-size: 17px;
+    font-family: monospace;
 }
