@@ -5,17 +5,18 @@ import Perfil from '../imgs/profile.jpg';
 
 export default class Content extends Component {
     state = {
-        curtidas: 0
+        liked: false
     }
 
     curtirPostagem = () => {
-        let contagem = this.state.curtidas + 1
         this.setState({
-            curtidas: contagem
+            liked: !this.state.liked
         });
     }
 
     render() {
+        const label = this.state.liked ? 'Curtiu' : 'Curtir'
+
         return (
             <Fragment>
                 <section>
@@ -26,7 +27,7 @@ export default class Content extends Component {
                     <img src={Img} alt="Natureza" className="Imagem" />
                     <div className="Curtidas">
                         <p>{this.state.curtidas} pessoas curtiram sua publicação</p>
-                        <button onClick={this.curtirPostagem}>Curtir</button>
+                        <button onClick={this.curtirPostagem}>{label}</button>
                     </div>
                 </section>
             </Fragment>

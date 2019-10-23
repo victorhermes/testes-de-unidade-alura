@@ -1,20 +1,11 @@
 header {
-    background-color: #fff;
+    background-color: rgb(42, 94, 236);
     border-bottom: 1px solid #d4d4d4;
     height: 70px;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-header div {
-    width: 900px;
-    max-width: 900px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20px 0 20px;
 }
 
 header div img {
