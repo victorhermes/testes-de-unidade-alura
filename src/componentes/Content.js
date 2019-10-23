@@ -4,7 +4,16 @@ import Img from '../imgs/conteudo/01.jpg';
 import Perfil from '../imgs/profile.jpg';
 
 export default class Content extends Component {
-    componentDidMount() {}
+    state = {
+        curtidas: 0
+    }
+
+    curtirPostagem = () => {
+        let contagem = this.state.curtidas + 1
+        this.setState({
+            curtidas: contagem
+        });
+    }
 
     render() {
         return (
@@ -15,6 +24,8 @@ export default class Content extends Component {
                         <p>Victor Hermes</p>
                     </div>
                     <img src={Img} alt="Natureza" className="Imagem" />
+                    <p>Curtidas: {this.state.curtidas}</p>
+                    <button onClick={this.curtirPostagem}>Curtir</button>
                 </section>
             </Fragment>
         )
