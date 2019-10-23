@@ -21,34 +21,23 @@
 }
 
 .Conteudo h1 {
-  text-transform: uppercase;
-  font-family: monospace;
   font-size: 26px;
   margin-bottom: 0;
 }
 
 .ValorMaior {
-  font-family: monospace;
   font-size: 20px;
   color: #02980e;
   margin-bottom: 20px;
 }
 
 .ValorMenor {
-  font-family: monospace;
   font-size: 20px;
   color: #af0e0e;
   margin-bottom: 20px;
 }
 
 .ValorNeutro {
-  font-family: monospace;
   font-size: 20px;
   color: #3d3d3d;
-}
-
-.Autor {
-  margin: 9px 16px 0;
-  font-size: 17px;
-  font-family: monospace;
 }

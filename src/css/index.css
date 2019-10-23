@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cecece;
+  width: 100%;
+  max-width: 500px;
+}
+
+button,
+a {
+  cursor: pointer;
+}

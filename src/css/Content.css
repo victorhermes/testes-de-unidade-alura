@@ -17,8 +17,6 @@ section {
 }
 
 .Conteudo h1 {
-  text-transform: uppercase;
-  font-family: monospace;
   font-size: 26px;
   margin-bottom: 0;
 }
@@ -34,7 +32,6 @@ section {
 }
 
 .Valor {
-  font-family: monospace;
   font-size: 20px;
   color: #02980e;
   margin-bottom: 25px;
@@ -43,5 +40,4 @@ section {
 .Autor {
   margin: 9px 16px 0;
   font-size: 17px;
-  font-family: monospace;
 }
