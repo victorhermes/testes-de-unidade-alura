@@ -19,3 +19,10 @@ section {
     max-height: 500px;
     object-fit: cover;
 }
+
+.Perfil {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50px;
+}
