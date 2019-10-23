@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Header from "./Header";
-import "../css/Content.css";
+import "../css/Product.css";
 import ImgUm from "../imgs/conteudo/01.jpg";
 
 export default class Content extends Component {
@@ -12,9 +12,9 @@ export default class Content extends Component {
     return (
       <Fragment>
         <Header />
-        <section>
+        <section className="Produto">
           <div>
-            <img src={ImgUm} alt="Natureza" className="Imagem" />
+            <img src={ImgUm} alt="Natureza" />
           </div>
           <div className="Conteudo">
             <h1>Produto</h1>

@@ -1,15 +1,18 @@
-import React from 'react';
-import '../css/Header.css'
-import Logo from '../imgs/alura.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css/Header.css";
+import Logo from "../imgs/alura.svg";
 
 export default class Header extends React.Component {
-    componentDidMount() {}
+  componentDidMount() {}
 
-    render() {
-        return (
-            <header>
-                <img src={Logo} alt="Logo" />
-            </header>
-        )
-    }
+  render() {
+    return (
+      <header>
+        <Link to="/">
+          <img src={Logo} alt="Logo" />
+        </Link>
+      </header>
+    );
+  }
 }

@@ -1,0 +1,47 @@
+.Produto {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 20px 50px 20px;
+  width: 700px;
+}
+
+.Produto img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.Conteudo {
+  margin-left: 40px;
+}
+
+.Conteudo h1 {
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 26px;
+  margin-bottom: 0;
+}
+
+.Conteudo a {
+  text-decoration: none;
+  color: #01639c;
+  font-size: 17px;
+  font-weight: 600;
+  border: 1px solid;
+  padding: 4px 10px 4px 10px;
+  border-radius: 5px;
+}
+
+.Valor {
+  font-family: monospace;
+  font-size: 20px;
+  color: #02980e;
+  margin-bottom: 25px;
+}
+
+.Autor {
+  margin: 9px 16px 0;
+  font-size: 17px;
+  font-family: monospace;
+}
