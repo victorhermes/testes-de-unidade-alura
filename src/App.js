@@ -1,13 +1,15 @@
-import React from 'react';
-import Header from './componentes/Header';
-import Content from './componentes/Content';
-import './css/App.css';
+import React from "react";
+import { Router } from "react-router-dom";
+import Routes from "./routes/routes";
+import history from "./routes/history";
+import "./css/App.css";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Content />
+      <Router history={history}>
+        <Routes />
+      </Router>
     </div>
   );
 }

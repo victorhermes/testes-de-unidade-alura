@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
+import Header from "./Header";
 import "../css/Content.css";
 import ImgUm from "../imgs/conteudo/01.jpg";
 import ImgDois from "../imgs/conteudo/02.jpg";
@@ -12,6 +14,7 @@ export default class Content extends Component {
   render() {
     return (
       <Fragment>
+        <Header />
         <section>
           <div>
             <img src={ImgUm} alt="Natureza" className="Imagem" />
@@ -19,7 +22,7 @@ export default class Content extends Component {
           <div className="Conteudo">
             <h1>Notebook com processador i5</h1>
             <p className="Valor">{this.state.reais}500,00</p>
-            <a href="http://localhost:3000/">Conferir</a>
+            <Link to="/produto">Conferir</Link>
           </div>
         </section>
         <hr />
