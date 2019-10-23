@@ -22,10 +22,15 @@ section {
     margin-bottom: 0;
 }
 
+.Conteudo a {
+    text-decoration: none;
+}
+
 .Valor {
     font-family: monospace;
     font-size: 20px;
     color: #02980e;
+    margin-bottom: 20px;
 }
 
 .Autor {

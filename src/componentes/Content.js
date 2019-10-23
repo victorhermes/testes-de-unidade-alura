@@ -18,6 +18,7 @@ export default class Content extends Component {
                     <div className="Conteudo">
                         <h1>Computador</h1>
                         <p className="Valor">{this.state.reais}500,00</p>
+                        <a href="#">Conferir</a>
                     </div>
                 </section>
             </Fragment>
