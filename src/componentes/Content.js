@@ -24,8 +24,10 @@ export default class Content extends Component {
                         <p>Victor Hermes</p>
                     </div>
                     <img src={Img} alt="Natureza" className="Imagem" />
-                    <p>Curtidas: {this.state.curtidas}</p>
-                    <button onClick={this.curtirPostagem}>Curtir</button>
+                    <div className="Curtidas">
+                        <p>{this.state.curtidas} pessoas curtiram sua publicação</p>
+                        <button onClick={this.curtirPostagem}>Curtir</button>
+                    </div>
                 </section>
             </Fragment>
         )
