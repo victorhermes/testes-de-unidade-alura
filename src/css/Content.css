@@ -47,4 +47,5 @@ section {
     border-radius: 29px;
     width: 80px;
     cursor: pointer;
+    outline: transparent;
 }
