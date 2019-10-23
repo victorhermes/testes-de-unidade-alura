@@ -39,3 +39,12 @@ section {
     justify-content: space-between;
     width: 100%;
 }
+
+.Curtidas button {
+    border: 1px solid #000;
+    background: transparent;
+    padding: 5px 5px 5px 5px;
+    border-radius: 29px;
+    width: 80px;
+    cursor: pointer;
+}
