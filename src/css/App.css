@@ -1,5 +1,14 @@
-h1, p {
+h1,
+p {
   margin: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cecece;
+  width: 100%;
+  max-width: 500px;
 }
 
 .App {

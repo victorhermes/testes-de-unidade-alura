@@ -1,40 +1,47 @@
 section {
-    display: flex;
-    flex-direction: row;
-    margin: 50px 20px 50px 20px;
-    width: 700px;
+  display: flex;
+  flex-direction: row;
+  margin: 50px 20px 50px 20px;
+  width: 500px;
 }
 
 .Imagem {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 .Conteudo {
-    margin-left: 20px;
+  margin-left: 40px;
 }
 
 .Conteudo h1 {
-    text-transform: uppercase;
-    font-family: monospace;
-    font-size: 26px;
-    margin-bottom: 0;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 26px;
+  margin-bottom: 0;
 }
 
 .Conteudo a {
-    text-decoration: none;
+  text-decoration: none;
+  color: #01639c;
+  font-size: 17px;
+  font-weight: 600;
+  border: 1px solid;
+  padding: 4px 10px 4px 10px;
+  border-radius: 5px;
 }
 
 .Valor {
-    font-family: monospace;
-    font-size: 20px;
-    color: #02980e;
-    margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 20px;
+  color: #02980e;
+  margin-bottom: 25px;
 }
 
 .Autor {
-    margin: 9px 16px 0;
-    font-size: 17px;
-    font-family: monospace;
+  margin: 9px 16px 0;
+  font-size: 17px;
+  font-family: monospace;
 }
