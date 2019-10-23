@@ -4,7 +4,9 @@ import Img from '../imgs/conteudo/01.jpg';
 import Perfil from '../imgs/profile.jpg';
 
 export default class Content extends Component {
-    state = {}
+    state = {
+        reais: 'R$',
+    }
 
     render() {
         return (
@@ -14,11 +16,8 @@ export default class Content extends Component {
                         <img src={Img} alt="Natureza" className="Imagem" />
                     </div>
                     <div className="Conteudo">
-                        <div className="Cabecalho">
-                            <img src={Perfil} alt="Perfil" className="Perfil" />
-                            <p>Victor Hermes</p>
-                        </div>
-                        <h1>232</h1>
+                        <h1>Computador</h1>
+                        <p className="Valor">{this.state.reais}500,00</p>
                     </div>
                 </section>
             </Fragment>

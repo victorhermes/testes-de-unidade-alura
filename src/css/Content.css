@@ -5,30 +5,31 @@ section {
     width: 700px;
 }
 
+.Imagem {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
 .Conteudo {
     margin-left: 20px;
 }
 
-.Cabecalho {
-    display: flex;
-    width: 100%;
+.Conteudo h1 {
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 26px;
+    margin-bottom: 0;
 }
 
-.Cabecalho p {
+.Valor {
+    font-family: monospace;
+    font-size: 20px;
+    color: #02980e;
+}
+
+.Autor {
     margin: 9px 16px 0;
     font-size: 17px;
     font-family: monospace;
-}
-
-.Imagem {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.Perfil {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50px;
 }
