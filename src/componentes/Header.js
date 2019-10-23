@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Header.css'
-import Logo from '../imgs/logo.png';
+import Logo from '../imgs/alura.svg';
+import User from '../imgs/user.png';
 
 export default class Header extends React.Component {
     componentDidMount() {}
@@ -10,7 +11,7 @@ export default class Header extends React.Component {
             <header>
                 <div>
                     <img src={Logo} alt="Logo" />
-                    <a href="http://localhost:3000/"> Entrar </a>
+                    <img src={User} alt="User" className="User" />
                 </div>
             </header>
         )

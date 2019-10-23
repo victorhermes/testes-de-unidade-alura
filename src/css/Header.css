@@ -9,10 +9,18 @@ header {
 }
 
 header div {
-    width: 990px;
-    max-width: 990px;
+    width: 900px;
+    max-width: 900px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 20px 0 20px;
+}
+
+header div img {
+    width: 100px;
+}
+
+.User {
+    width: 27px;
 }
