@@ -22,7 +22,7 @@ export default class Content extends Component {
           <div className="Conteudo">
             <h1>Notebook com processador i5</h1>
             <p className="Valor">{this.state.reais}500,00</p>
-            <Link to="/produto">Conferir</Link>
+            <Link to="/produto/1">Conferir</Link>
           </div>
         </section>
         <hr />
@@ -32,8 +32,8 @@ export default class Content extends Component {
           </div>
           <div className="Conteudo">
             <h1>Fusca vermelho clássico</h1>
-            <p className="Valor">{this.state.reais}15.000,00</p>
-            <a href="http://localhost:3000/">Conferir</a>
+            <p className="Valor">{this.state.reais}6.500,00</p>
+            <Link to="/produto/2">Conferir</Link>
           </div>
         </section>
         <hr />
@@ -43,8 +43,8 @@ export default class Content extends Component {
           </div>
           <div className="Conteudo">
             <h1>Celular com tela infinita</h1>
-            <p className="Valor">{this.state.reais}700,00</p>
-            <a href="http://localhost:3000/">Conferir</a>
+            <p className="Valor">{this.state.reais}400,00</p>
+            <Link to="/produto/3">Conferir</Link>
           </div>
         </section>
       </Fragment>
