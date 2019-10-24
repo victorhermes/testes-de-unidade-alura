@@ -1,14 +1,14 @@
 header {
-  background-color: rgb(42, 94, 236);
-  border-bottom: 1px solid #d4d4d4;
-  height: 70px;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: rgb(42, 94, 236);
+    border-bottom: 1px solid #d4d4d4;
+    height: 70px;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header div img {
-  width: 75px;
+    width: 75px;
 }

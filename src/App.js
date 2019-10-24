@@ -5,13 +5,13 @@ import history from "./routes/history";
 import "./css/App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <Router history={history}>
-        <Routes />
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+        <Router history={history}>
+            <Routes />
+        </Router>
+        </div>
+    );
 }
 
 export default App;
