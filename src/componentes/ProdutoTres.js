@@ -14,7 +14,7 @@ export default class Content extends Component {
             <Header />
             <section className="Produto">
             <div>
-                <img src={ImgTres} alt="Natureza" />
+                <img src={ImgTres} alt="Celular" />
             </div>
             <div className="Conteudo">
                 <h1>Celular com tela infinita</h1>

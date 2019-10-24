@@ -14,7 +14,7 @@ export default class Content extends Component {
             <Header />
             <section className="Produto">
             <div>
-                <img src={ImgDois} alt="Natureza" />
+                <img src={ImgDois} alt="Fusca" />
             </div>
             <div className="Conteudo">
                 <h1>Fusca vermelho clássico</h1>
