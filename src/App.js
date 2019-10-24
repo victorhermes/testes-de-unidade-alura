@@ -6,11 +6,11 @@ import "./css/App.css";
 
 function App() {
     return (
-        <div className="App">
         <Router history={history}>
-            <Routes />
+            <div className="App">
+                <Routes />
+            </div> 
         </Router>
-        </div>
     );
 }
 
