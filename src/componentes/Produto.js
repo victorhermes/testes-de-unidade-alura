@@ -4,21 +4,15 @@ import "../css/Produto.css";
 
 export default class Produto extends Component {
     state = {
-        moeda: "R$",
-        dados: {}
+        moeda: "R$"
     };
-
-    componentWillMount() {
-        const dados = this.props.location.dados;
-        this.setState({ dados });
-    }
 
     render() {
         function subtrairLances(num1, num2) {
             return num1 - num2;
         }
 
-        const { id, titulo, imagem, lances } = this.state.dados;
+        const { id, titulo, imagem, lances } = this.props.location.dados;
 
         const maioresLances = lances
             .sort(subtrairLances)
