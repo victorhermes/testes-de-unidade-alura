@@ -14,14 +14,14 @@ export default class Produto extends Component {
     }
 
     render() {
-        function organizarNumeros(a, b) {
-            return a - b;
+        function subtrairLances(num1, num2) {
+            return num1 - num2;
         }
 
         const { id, titulo, imagem, lances } = this.state.dados;
 
-        const lance = lances
-            .sort(organizarNumeros)
+        const maioresLances = lances
+            .sort(subtrairLances)
             .reverse()
             .slice(0, 3);
 
@@ -51,7 +51,7 @@ export default class Produto extends Component {
                         </p>
 
                         <h3>Maiores lances:</h3>
-                        {lance.map(l => {
+                        {maioresLances.map(l => {
                             return (
                                 <p key={l} className="valor-neutro">
                                     {this.state.moeda}

@@ -1,3 +1,1 @@
-module.exports = {
-    baseURL: "https://api.myjson.com/bins/hqhl8"
-};
+export const URLBase = "https://api.myjson.com/bins/hqhl8";
