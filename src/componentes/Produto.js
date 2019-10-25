@@ -45,11 +45,11 @@ export default class Produto extends Component {
                             </p>
 
                             <h3>Maiores lances:</h3>
-                            {maioresLances.map(l => {
+                            {maioresLances.map(lance => {
                                 return (
-                                    <p key={l} className="valor-neutro">
+                                    <p key={lance} className="valor-neutro">
                                         {this.state.moeda}
-                                        {l}
+                                        {lance}
                                     </p>
                                 );
                             })}
