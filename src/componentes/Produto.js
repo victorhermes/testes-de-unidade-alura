@@ -7,15 +7,15 @@ export default class Produto extends Component {
         moeda: "R$"
     };
 
-    render() {
-        function subtrairLances(num1, num2) {
-            return num1 - num2;
-        }
+    subtrairLances = (num1, num2) => {
+        return num1 - num2;
+    };
 
+    render() {
         const { id, titulo, imagem, lances } = this.props.location.dados;
 
         const maioresLances = lances
-            .sort(subtrairLances)
+            .sort(this.subtrairLances)
             .reverse()
             .slice(0, 3);
 
