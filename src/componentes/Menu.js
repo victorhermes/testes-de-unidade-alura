@@ -7,9 +7,14 @@ export default class Menu extends Component {
     render() {
         return (
             <header className="menu">
-                <Link to="/">
-                    <img src={Logo} alt="Logo" className="menu-logo" />
-                </Link>
+                <nav className="navegacao-menu">
+                    <Link to="/">
+                        <img src={Logo} alt="Logo" className="menu-logo" />
+                    </Link>
+                    <Link to="/adicionar-produto" className="link-produto">
+                        Adicionar Produto
+                    </Link>
+                </nav>
             </header>
         );
     }

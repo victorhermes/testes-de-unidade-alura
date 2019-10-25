@@ -1,0 +1,29 @@
+.formulario-produto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.entrada-produto {
+    border: 1px solid #7d7d7d;
+    outline: none;
+    width: 260px;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0 0 10px 0;
+}
+
+.botao-adicionar-produto {
+    border: 0;
+    background: #2a5eec;
+    color: #ffffff;
+    text-transform: uppercase;
+    outline: none;
+    width: 275px;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 15px 0 0 0;
+    cursor: pointer;
+}
