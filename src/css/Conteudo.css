@@ -1,27 +1,27 @@
-section {
+.container {
     display: flex;
     flex-direction: row;
     margin: 50px 20px 50px 20px;
     width: 500px;
 }
 
-.Imagem {
+.imagem {
     width: 150px;
     height: 150px;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.Conteudo {
+.conteudo {
     margin-left: 40px;
 }
 
-.Conteudo h1 {
+.titulo-conteudo {
     font-size: 26px;
     margin-bottom: 0;
 }
 
-.Conteudo a {
+.botao-conferir {
     color: #01639c;
     font-size: 17px;
     font-weight: 600;
@@ -30,7 +30,7 @@ section {
     border-radius: 5px;
 }
 
-.Valor {
+.valor {
     font-size: 20px;
     color: #02980e;
     margin-bottom: 25px;

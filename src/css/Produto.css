@@ -1,43 +1,39 @@
-.Produto {
+.produto {
     display: flex;
     flex-direction: row;
     margin: 50px 20px 50px 20px;
     width: 700px;
 }
 
-.Produto h1 {
+.titulo-produto {
+    font-size: 26px;
     padding-bottom: 15px;
 }
 
-.Produto img {
+.imagem-produto {
     width: 300px;
     height: 300px;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.Conteudo {
+.conteudo {
     margin-left: 40px;
 }
 
-.Conteudo h1 {
-    font-size: 26px;
-    margin-bottom: 0;
-}
-
-.ValorMaior {
+.valor-maior {
     font-size: 20px;
     color: #02980e;
     margin-bottom: 20px;
 }
 
-.ValorMenor {
+.valor-menor {
     font-size: 20px;
     color: #af0e0e;
     margin-bottom: 20px;
 }
 
-.ValorNeutro {
+.valor-neutro {
     font-size: 20px;
     color: #3d3d3d;
 }

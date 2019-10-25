@@ -7,9 +7,9 @@ import "./css/App.css";
 function App() {
     return (
         <Router history={history}>
-            <div className="App">
+            <div className="app">
                 <Routes />
-            </div> 
+            </div>
         </Router>
     );
 }

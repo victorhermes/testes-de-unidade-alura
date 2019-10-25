@@ -1,6 +1,5 @@
-header {
-    background-color: rgb(42, 94, 236);
-    border-bottom: 1px solid #d4d4d4;
+.menu {
+    background-color: #2a5eec;
     height: 70px;
     top: 0;
     width: 100%;
@@ -9,6 +8,6 @@ header {
     align-items: center;
 }
 
-header div img {
+.menu-logo {
     width: 75px;
 }
