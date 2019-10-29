@@ -9,9 +9,9 @@ export default class Produto extends Component {
         dados: []
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         const { id } = this.props.match.params;
-        fetch(URLBase + "/" + id)
+        await fetch(URLBase + "/" + id)
             .then(response => response.json())
             .then(data => {
                 this.setState({ dados: [data] });
