@@ -1,7 +1,7 @@
 .produto {
     display: flex;
     flex-direction: row;
-    margin: 50px 20px 50px 20px;
+    margin: 50px 20px;
     width: 700px;
 }
 
@@ -47,6 +47,6 @@
     font-size: 12px;
     font-weight: 600;
     border: 1px solid;
-    padding: 4px 10px 4px 10px;
+    padding: 4px 10px;
     border-radius: 5px;
 }

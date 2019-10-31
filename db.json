@@ -1,37 +1,45 @@
 {
   "leilao": [
     {
+      "titulo": "TV antiga",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        100,
+        150,
+        250
+      ],
+      "id": 1
+    },
+    {
       "titulo": "Atari VCS",
       "imagem": "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/10/r16x9/20191001100636_1200_675_-_atari_vcs.jpg",
       "lances": [
-        "450",
-        "500"
+        50,
+        65,
+        85,
+        95
       ],
-      "id": 1
+      "id": 2
     },
     {
       "titulo": "Atari flashback",
       "imagem": "https://static01.nyt.com/images/2017/11/26/business/26ATARI1/26ATARI1-facebookJumbo.jpg",
       "lances": [
-        "100",
-        "150",
-        "50",
-        "600",
-        "600",
-        "750"
-      ],
-      "id": 2
-    },
-    {
-      "titulo": "TV antiga",
-      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
-      "lances": [
-        "100",
-        "150",
-        "400",
-        "500"
+        40,
+        50,
+        70
       ],
       "id": 3
+    },
+    {
+      "titulo": "TV antiga2",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        40,
+        150,
+        20
+      ],
+      "id": 4
     }
   ]
 }

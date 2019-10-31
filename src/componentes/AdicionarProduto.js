@@ -52,11 +52,13 @@ export default class AdicionarProduto extends Component {
                             required
                         />
                         <input
-                            type="text"
+                            type="number"
                             name="lances"
                             value={this.state.lances}
                             onChange={e =>
-                                this.setState({ lances: e.target.value })
+                                this.setState({
+                                    lances: parseInt(e.target.value)
+                                })
                             }
                             placeholder="Lance inicial"
                             className="entrada-produto"

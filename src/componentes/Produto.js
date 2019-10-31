@@ -7,12 +7,14 @@ import "../css/Produto.css";
 export default class Produto extends Component {
     state = {
         moeda: "R$",
-        dados: []
+        dados: [],
+        msgSucesso: ""
     };
 
-    async componentDidMount() {
+    componentDidMount() {
         const { id } = this.props.match.params;
-        await fetch(URLBase + "/" + id)
+
+        fetch(URLBase + "/" + id)
             .then(response => response.json())
             .then(data => {
                 this.setState({ dados: [data] });
@@ -22,6 +24,13 @@ export default class Produto extends Component {
 
     subtrairLances = (num1, num2) => {
         return num1 - num2;
+    };
+
+    organizarLances = conteudo => {
+        return conteudo.lances
+            .sort(this.subtrairLances)
+            .reverse()
+            .slice(0, 3);
     };
 
     render() {
@@ -54,21 +63,14 @@ export default class Produto extends Component {
                                 </p>
 
                                 <h3>Maiores lances:</h3>
-                                {conteudo.lances
-                                    .sort(this.subtrairLances)
-                                    .reverse()
-                                    .slice(0, 3)
-                                    .map(lance => {
-                                        return (
-                                            <p
-                                                key={lance}
-                                                className="valor-neutro"
-                                            >
-                                                {this.state.moeda}
-                                                {lance}
-                                            </p>
-                                        );
-                                    })}
+                                {this.organizarLances(conteudo).map(lance => {
+                                    return (
+                                        <p key={lance} className="valor-neutro">
+                                            {this.state.moeda}
+                                            {lance}
+                                        </p>
+                                    );
+                                })}
                                 <Link
                                     to={{
                                         pathname: `/novo-lance/${conteudo.id}`

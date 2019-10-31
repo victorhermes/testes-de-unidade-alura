@@ -6,25 +6,25 @@ import Menu from "./Menu";
 export default class AdicionarProduto extends Component {
     state = {
         dados: [],
-        novoLance: ""
+        novoLance: null,
+        id: null
     };
 
-    async componentDidMount() {
+    componentDidMount() {
         const { id } = this.props.match.params;
 
-        await fetch(URLBase + "/" + id)
+        fetch(URLBase + "/" + id)
             .then(response => response.json())
             .then(data => {
-                this.setState({ dados: data });
+                this.setState({ dados: data, id });
             })
             .catch(error => console.error(error));
     }
 
     submeterProduto = e => {
         e.preventDefault();
-        const { id } = this.props.match.params;
         const { titulo, imagem, lances } = this.state.dados;
-        const { novoLance } = this.state;
+        const { id, novoLance } = this.state;
 
         fetch(URLBase + "/" + id, {
             method: "PUT",
@@ -35,7 +35,7 @@ export default class AdicionarProduto extends Component {
             body: JSON.stringify({
                 titulo,
                 imagem,
-                lances: [...lances, novoLance]
+                lances: [...lances, parseInt(novoLance)]
             })
         })
             .then(function() {

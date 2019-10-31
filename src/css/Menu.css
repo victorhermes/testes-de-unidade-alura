@@ -11,7 +11,7 @@
 .navegacao-menu {
     width: 100%;
     max-width: 700px;
-    margin: 0 15px 0 15px;
+    margin: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,5 +24,5 @@
 .link-produto {
     font-size: 15px;
     color: #ffffff;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
 }

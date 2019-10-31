@@ -10,8 +10,8 @@ export default class Conteudo extends Component {
         dados: []
     };
 
-    async componentDidMount() {
-        await fetch(URLBase)
+    componentDidMount() {
+        fetch(URLBase)
             .then(response => response.json())
             .then(data => {
                 this.setState({ dados: data });
