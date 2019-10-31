@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { URLBase } from "../services/api";
+import { Link } from "react-router-dom";
 import Menu from "./Menu";
 import "../css/Produto.css";
 
@@ -68,6 +69,14 @@ export default class Produto extends Component {
                                             </p>
                                         );
                                     })}
+                                <Link
+                                    to={{
+                                        pathname: `/novo-lance/${conteudo.id}`
+                                    }}
+                                    className="botao-novo-lance"
+                                >
+                                    Novo lance
+                                </Link>
                             </div>
                         </section>
                     );

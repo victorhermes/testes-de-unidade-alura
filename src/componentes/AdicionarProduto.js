@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import { URLBase } from "../services/api";
 import history from "../routes/history";
 import "../css/AdicionarProduto.css";
 import Menu from "./Menu";
@@ -7,20 +8,20 @@ export default class AdicionarProduto extends Component {
     state = {
         titulo: "",
         imagem: "",
-        lances: [0]
+        lances: []
     };
 
     submeterProduto = e => {
         e.preventDefault();
         const { titulo, imagem, lances } = this.state;
 
-        fetch("http://localhost:3000/leilao", {
+        fetch(URLBase, {
             method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ titulo, imagem, lances })
+            body: JSON.stringify({ titulo, imagem, lances: [lances] })
         })
             .then(function() {
                 history.push("/");
@@ -52,6 +53,17 @@ export default class AdicionarProduto extends Component {
                         />
                         <input
                             type="text"
+                            name="lances"
+                            value={this.state.lances}
+                            onChange={e =>
+                                this.setState({ lances: e.target.value })
+                            }
+                            placeholder="Lance inicial"
+                            className="entrada-produto"
+                            required
+                        />
+                        <input
+                            type="text"
                             name="imagem"
                             value={this.state.imagem}
                             onChange={e =>
@@ -59,6 +71,7 @@ export default class AdicionarProduto extends Component {
                             }
                             placeholder="Link da imagem"
                             className="entrada-produto"
+                            required
                         />
                         <input
                             type="submit"
