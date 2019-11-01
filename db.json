@@ -37,9 +37,19 @@
       "lances": [
         40,
         150,
-        20
+        20,
+        350
       ],
       "id": 4
+    },
+    {
+      "titulo": "Telefone antigo",
+      "imagem": "https://img.huffingtonpost.com/asset/5b9cc6b7240000310094d104.jpeg",
+      "lances": [
+        300,
+        350
+      ],
+      "id": 5
     }
   ]
 }
