@@ -1,1 +1,1 @@
-export const URLBase = "https://api.myjson.com/bins/hqhl8";
+export const URLBase = "http://localhost:3000/leilao";

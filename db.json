@@ -1,22 +1,45 @@
 {
-    "leilao": [
-        {
-            "id": 1,
-            "titulo": "Notebook com processador i5",
-            "imagem": "https://img5.goodfon.com/wallpaper/nbig/b/3b/window-desk-watches-notebook-smartphone-headphones.jpg",
-            "lances": [500, 150, 110, 50, 600]
-        },
-        {
-            "id": 2,
-            "titulo": "Fusquinha vermelho clássico",
-            "imagem": "https://cdn.pixabay.com/photo/2014/01/16/13/56/vw-246364_960_720.jpg",
-            "lances": [1000, 900, 100, 800]
-        },
-        {
-            "id": 3,
-            "titulo": "Violão antigo takamine",
-            "imagem": "http://wallpapers3.hellowallpaper.com/music_guitar_09-1920x1200.jpg",
-            "lances": [150, 550, 250]
-        }
-    ]
+  "leilao": [
+    {
+      "titulo": "TV antiga",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        100,
+        150,
+        250
+      ],
+      "id": 1
+    },
+    {
+      "titulo": "Atari VCS",
+      "imagem": "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/10/r16x9/20191001100636_1200_675_-_atari_vcs.jpg",
+      "lances": [
+        50,
+        65,
+        85,
+        95
+      ],
+      "id": 2
+    },
+    {
+      "titulo": "Atari flashback",
+      "imagem": "https://static01.nyt.com/images/2017/11/26/business/26ATARI1/26ATARI1-facebookJumbo.jpg",
+      "lances": [
+        40,
+        50,
+        70
+      ],
+      "id": 3
+    },
+    {
+      "titulo": "TV antiga2",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        40,
+        150,
+        20
+      ],
+      "id": 4
+    }
+  ]
 }
