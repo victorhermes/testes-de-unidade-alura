@@ -6,7 +6,7 @@ import Menu from "./Menu";
 export default class AdicionarProduto extends Component {
     state = {
         dados: [],
-        novoLance: null,
+        novoLance: "",
         id: null
     };
 

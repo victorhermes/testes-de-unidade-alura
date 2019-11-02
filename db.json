@@ -6,7 +6,10 @@
       "lances": [
         100,
         150,
-        250
+        250,
+        600,
+        800,
+        850
       ],
       "id": 1
     },
@@ -27,7 +30,9 @@
       "lances": [
         40,
         50,
-        70
+        70,
+        80,
+        878
       ],
       "id": 3
     },
@@ -46,10 +51,35 @@
       "titulo": "Telefone antigo",
       "imagem": "https://img.huffingtonpost.com/asset/5b9cc6b7240000310094d104.jpeg",
       "lances": [
-        300,
-        350
+        90,
+        100,
+        400,
+        40
       ],
       "id": 5
+    },
+    {
+      "titulo": "TV antiga3",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        10,
+        15,
+        30,
+        50
+      ],
+      "id": 6
+    },
+    {
+      "titulo": "TV",
+      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "lances": [
+        111,
+        123,
+        10,
+        1,
+        0
+      ],
+      "id": 7
     }
   ]
 }

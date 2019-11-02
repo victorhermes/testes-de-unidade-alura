@@ -7,8 +7,7 @@ import "../css/Produto.css";
 export default class Produto extends Component {
     state = {
         moeda: "R$",
-        dados: [],
-        msgSucesso: ""
+        dados: []
     };
 
     componentDidMount() {
