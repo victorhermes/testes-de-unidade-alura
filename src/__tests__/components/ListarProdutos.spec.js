@@ -1,4 +1,5 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
 import ListarProdutos from "../../componentes/ListarProdutos";
@@ -37,6 +38,30 @@ describe("Teste da listagem dos produtos", () => {
         const wrapper = shallow(<ListarProdutos dados={[]} />);
 
         expect(wrapper.find("section")).toHaveLength(0);
+    });
+
+    it("Deve haver o botão Conferir", () => {
+        const wrapper = mount(
+            <Router>
+                <ListarProdutos dados={dados} />
+            </Router>
+        );
+
+        expect(wrapper.find("a")).toHaveLength(2);
+
+        expect(
+            wrapper
+                .find("a")
+                .at(0)
+                .text()
+        ).toEqual("Conferir");
+
+        expect(
+            wrapper
+                .find("a")
+                .at(1)
+                .text()
+        ).toEqual("Conferir");
     });
 
     it("Deve retornar o maior lance", () => {
