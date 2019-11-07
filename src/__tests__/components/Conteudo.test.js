@@ -1,4 +1,4 @@
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import React from "react";
 
 import Conteudo from "../../componentes/Conteudo";
@@ -22,5 +22,28 @@ describe("Teste da renderização do componente Conteudo", () => {
         const wrapper = shallow(<Conteudo />);
 
         expect(wrapper.find(ListarProdutos)).toHaveLength(1);
+    });
+
+    it("Deve executar o componentDidMount", () => {
+        const mockData = {};
+        const mockJsonPromise = Promise.resolve(mockData);
+        const mockFetchPromise = Promise.resolve({
+            json: () => mockJsonPromise
+        });
+        jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
+
+        const wrapper = shallow(<Conteudo />);
+
+        expect(global.fetch).toHaveBeenCalledTimes(1);
+        expect(global.fetch).toHaveBeenCalledWith(
+            "http://localhost:3000/leilao"
+        );
+
+        expect(wrapper.state()).toEqual({
+            moeda: "R$",
+            dados: []
+        });
+
+        global.fetch.mockClear();
     });
 });
