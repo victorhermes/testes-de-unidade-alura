@@ -18,7 +18,7 @@ export default class Conteudo extends Component {
             .then(data => {
                 this.setState({ dados: data });
             })
-            .catch(console.log("Erro interno."));
+            .catch(() => console.log("Erro interno"));
     }
 
     render() {
