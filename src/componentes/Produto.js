@@ -18,7 +18,7 @@ export default class Produto extends Component {
             .then(data => {
                 this.setState({ dados: [data] });
             })
-            .catch(error => console.error(error));
+            .catch(() => console.log("Erro interno"));
     }
 
     render() {
