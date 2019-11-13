@@ -5,11 +5,14 @@ import "../css/AdicionarProduto.css";
 import Menu from "./Menu";
 
 export default class AdicionarProduto extends Component {
-    state = {
-        titulo: "",
-        imagem: "",
-        lances: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            titulo: "",
+            imagem: "",
+            lances: []
+        };
+    }
 
     submeterProduto = e => {
         e.preventDefault();

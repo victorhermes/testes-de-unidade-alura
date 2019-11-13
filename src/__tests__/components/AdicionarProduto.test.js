@@ -39,21 +39,63 @@ describe("Teste da renderização do componente Produto", () => {
         wrapper.unmount();
     });
 
-    it("Deve simular formulário e alterar o estado do componente", preventDefault => {
-        const wrapper = shallow(<AdicionarProduto />);
-        wrapper
+    it("Deve simular formulário e alterar o estado do componente", () => {
+        const component = mount(
+            <Router>
+                <AdicionarProduto />
+            </Router>
+        );
+
+        component
             .find("input")
-            .first()
+            .at(0)
             .simulate("change", {
-                titulo: "fullname"
+                target: {
+                    value: "Aplicação 01"
+                }
             });
-        wrapper.find("form").simulate("submit", { preventDefault });
-        expect(wrapper).toEqual({});
-        expect(wrapper.state()).toEqual({
-            titulo: "fullname",
-            imagem: "",
-            lances: []
-        });
-        wrapper.unmount();
+
+        component
+            .find("input")
+            .at(1)
+            .simulate("change", {
+                target: {
+                    value: [10, 20]
+                }
+            });
+
+        component
+            .find("input")
+            .at(2)
+            .simulate("change", {
+                target: {
+                    value: "http://www.alura.com/01.jpg"
+                }
+            });
+
+        component.find(".formulario-produto").simulate("submit");
+
+        expect(
+            component
+                .find("input")
+                .at(0)
+                .prop("value")
+        ).toEqual("Aplicação 01");
+
+        expect(
+            component
+                .find("input")
+                .at(1)
+                .prop("value")
+        ).toEqual(parseInt([10, 20]));
+
+        expect(
+            component
+                .find("input")
+                .at(2)
+                .prop("value")
+        ).toEqual("http://www.alura.com/01.jpg");
+
+        component.unmount();
     });
 });
