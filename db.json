@@ -39,49 +39,13 @@
       "id": 3
     },
     {
-      "titulo": "TV antiga2",
-      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+      "titulo": "Mac",
+      "imagem": "https://grist.files.wordpress.com/2014/04/old-mac-apple-computer-flickr.jpg",
       "lances": [
-        40,
-        150,
-        20,
-        350
+        133,
+        144
       ],
       "id": 4
-    },
-    {
-      "titulo": "Telefone antigo",
-      "imagem": "https://img.huffingtonpost.com/asset/5b9cc6b7240000310094d104.jpeg",
-      "lances": [
-        90,
-        100,
-        400,
-        40
-      ],
-      "id": 5
-    },
-    {
-      "titulo": "TV antiga3",
-      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
-      "lances": [
-        10,
-        15,
-        30,
-        50
-      ],
-      "id": 6
-    },
-    {
-      "titulo": "TV",
-      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
-      "lances": [
-        111,
-        123,
-        10,
-        1,
-        0
-      ],
-      "id": 7
     }
   ]
 }
