@@ -17,8 +17,7 @@ export default class AdicionarProduto extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ dados: data, id });
-            })
-            .catch(error => console.error(error));
+            });
     }
 
     submeterProduto = e => {
@@ -37,13 +36,9 @@ export default class AdicionarProduto extends Component {
                 imagem,
                 lances: [...lances, parseInt(novoLance)]
             })
-        })
-            .then(function() {
-                history.push(`/produto/${id}`);
-            })
-            .catch(function(error) {
-                console.error(error);
-            });
+        }).then(function() {
+            history.push(`/produto/${id}`);
+        });
     };
 
     render() {

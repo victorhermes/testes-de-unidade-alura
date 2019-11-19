@@ -82,4 +82,33 @@ describe("Teste da renderização do componente NovoLance", () => {
         expect(wrapper.state().novoLance).toEqual("20");
         expect(wrapper.state().id).toEqual(1);
     });
+
+    it("Deve simular formulário e alterar o estado do componente", () => {
+        const component = shallow(<NovoLance match={match} />);
+
+        const spy = jest.spyOn(component.instance(), "submeterProduto");
+
+        component
+            .find("input")
+            .at(0)
+            .simulate("change", {
+                target: {
+                    value: "10"
+                }
+            });
+
+        component
+            .find(".formulario-produto")
+            .simulate("submit", { preventDefault: () => {} });
+
+        expect(
+            component
+                .find("input")
+                .at(0)
+                .prop("value")
+        ).toEqual("10");
+
+        expect(spy).toBeTruthy();
+        expect(spy).toThrow(TypeError);
+    });
 });

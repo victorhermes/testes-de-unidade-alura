@@ -14,8 +14,6 @@ describe("Teste da renderização do componente Produto", () => {
             imagem: "",
             lances: []
         });
-
-        wrapper.unmount();
     });
 
     it("Deve incluir dados no estado do componente", () => {
@@ -35,8 +33,6 @@ describe("Teste da renderização do componente Produto", () => {
         expect(wrapper.state().titulo).toEqual("Aplicação 01");
         expect(wrapper.state().imagem).toEqual("http://www.alura.com/01.jpg");
         expect(wrapper.state().lances).toEqual([10, 20]);
-
-        wrapper.unmount();
     });
 
     it("Deve simular formulário e alterar o estado do componente", () => {
@@ -95,7 +91,5 @@ describe("Teste da renderização do componente Produto", () => {
                 .at(2)
                 .prop("value")
         ).toEqual("http://www.alura.com/01.jpg");
-
-        component.unmount();
     });
 });

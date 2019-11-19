@@ -1,131 +1,28 @@
 {
-  "leilao": [
-    {
-      "titulo": "TV antiga",
-      "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
-      "lances": [
-        100,
-        150,
-        250,
-        600,
-        800,
-        850,
-        900,
-        950
-      ],
-      "id": 1
-    },
-    {
-      "titulo": "Atari VCS",
-      "imagem": "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/10/r16x9/20191001100636_1200_675_-_atari_vcs.jpg",
-      "lances": [
-        50,
-        65,
-        85,
-        95
-      ],
-      "id": 2
-    },
-    {
-      "titulo": "Atari flashback",
-      "imagem": "https://static01.nyt.com/images/2017/11/26/business/26ATARI1/26ATARI1-facebookJumbo.jpg",
-      "lances": [
-        40,
-        50,
-        70,
-        80,
-        878
-      ],
-      "id": 3
-    },
-    {
-      "titulo": "Mac",
-      "imagem": "https://grist.files.wordpress.com/2014/04/old-mac-apple-computer-flickr.jpg",
-      "lances": [
-        133,
-        144
-      ],
-      "id": 4
-    },
-    {
-      "titulo": "Foo me",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 5
-    },
-    {
-      "titulo": "",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 6
-    },
-    {
-      "titulo": "Aplicação 01",
-      "imagem": "http://www.alura.com/01.jpg",
-      "lances": [
-        10
-      ],
-      "id": 7
-    },
-    {
-      "titulo": "",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 8
-    },
-    {
-      "titulo": "Aplicação 01",
-      "imagem": "http://www.alura.com/01.jpg",
-      "lances": [
-        10
-      ],
-      "id": 9
-    },
-    {
-      "titulo": "",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 10
-    },
-    {
-      "titulo": "Aplicação 01",
-      "imagem": "http://www.alura.com/01.jpg",
-      "lances": [
-        10
-      ],
-      "id": 11
-    },
-    {
-      "titulo": "",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 12
-    },
-    {
-      "titulo": "Aplicação 01",
-      "imagem": "http://www.alura.com/01.jpg",
-      "lances": [
-        10
-      ],
-      "id": 13
-    },
-    {
-      "titulo": "",
-      "imagem": "",
-      "lances": [
-        []
-      ],
-      "id": 14
-    }
-  ]
+    "leilao": [
+        {
+            "titulo": "TV antiga",
+            "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
+            "lances": [100, 150, 250, 600, 800, 850, 900, 950],
+            "id": 1
+        },
+        {
+            "titulo": "Atari VCS",
+            "imagem": "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/10/r16x9/20191001100636_1200_675_-_atari_vcs.jpg",
+            "lances": [100, 104],
+            "id": 2
+        },
+        {
+            "titulo": "Atari flashback",
+            "imagem": "https://static01.nyt.com/images/2017/11/26/business/26ATARI1/26ATARI1-facebookJumbo.jpg",
+            "lances": [40, 50, 70, 80, 878],
+            "id": 3
+        },
+        {
+            "titulo": "Mac",
+            "imagem": "https://grist.files.wordpress.com/2014/04/old-mac-apple-computer-flickr.jpg",
+            "lances": [133, 144],
+            "id": 4
+        }
+    ]
 }
