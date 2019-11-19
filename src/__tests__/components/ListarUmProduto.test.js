@@ -17,8 +17,6 @@ describe("Deve renderizar um único produto", () => {
     it("Deve renderizar os produtos", () => {
         const wrapper = shallow(<ListarUmProduto dados={dados} />);
 
-        //console.log(wrapper.debug());
-
         expect(wrapper.find("section")).toHaveLength(dados.length);
     });
 });

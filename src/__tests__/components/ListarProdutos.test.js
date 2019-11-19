@@ -23,41 +23,41 @@ describe("Teste da listagem dos produtos", () => {
     ];
 
     it("Deve haver o componente ListarProdutos", () => {
-        const wrapper = shallow(<ListarProdutos />);
+        const componente = shallow(<ListarProdutos />);
 
-        expect(wrapper.exists()).toBe(true);
+        expect(componente.exists()).toBe(true);
     });
 
     it("Deve renderizar os produtos", () => {
-        const wrapper = shallow(<ListarProdutos dados={dados} />);
+        const componente = shallow(<ListarProdutos dados={dados} />);
 
-        expect(wrapper.find("section")).toHaveLength(dados.length);
+        expect(componente.find("section")).toHaveLength(dados.length);
     });
 
     it("Não deve quebrar com array dados vazio", () => {
-        const wrapper = shallow(<ListarProdutos dados={[]} />);
+        const componente = shallow(<ListarProdutos dados={[]} />);
 
-        expect(wrapper.find("section")).toHaveLength(0);
+        expect(componente.find("section")).toHaveLength(0);
     });
 
     it("Deve haver o botão Conferir", () => {
-        const wrapper = mount(
+        const componente = mount(
             <Router>
                 <ListarProdutos dados={dados} />
             </Router>
         );
 
-        expect(wrapper.find("a")).toHaveLength(2);
+        expect(componente.find("a")).toHaveLength(2);
 
         expect(
-            wrapper
+            componente
                 .find("a")
                 .at(0)
                 .text()
         ).toEqual("Conferir");
 
         expect(
-            wrapper
+            componente
                 .find("a")
                 .at(1)
                 .text()

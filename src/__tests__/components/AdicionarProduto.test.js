@@ -6,10 +6,10 @@ import AdicionarProduto from "../../componentes/AdicionarProduto";
 
 describe("Teste da renderização do componente Produto", () => {
     it("Deve iniciar com estado vazio", () => {
-        const wrapper = shallow(<AdicionarProduto />);
+        const componente = shallow(<AdicionarProduto />);
 
-        expect(wrapper).toEqual({});
-        expect(wrapper.state()).toEqual({
+        expect(componente).toEqual({});
+        expect(componente.state()).toEqual({
             titulo: "",
             imagem: "",
             lances: []
@@ -17,32 +17,34 @@ describe("Teste da renderização do componente Produto", () => {
     });
 
     it("Deve incluir dados no estado do componente", () => {
-        const wrapper = mount(
+        const componente = mount(
             <Router>
                 <AdicionarProduto />
             </Router>
         );
 
-        wrapper.setState({
+        componente.setState({
             titulo: "Aplicação 01",
             imagem: "http://www.alura.com/01.jpg",
             lances: [10, 20]
         });
 
-        expect(wrapper).toEqual({});
-        expect(wrapper.state().titulo).toEqual("Aplicação 01");
-        expect(wrapper.state().imagem).toEqual("http://www.alura.com/01.jpg");
-        expect(wrapper.state().lances).toEqual([10, 20]);
+        expect(componente).toEqual({});
+        expect(componente.state().titulo).toEqual("Aplicação 01");
+        expect(componente.state().imagem).toEqual(
+            "http://www.alura.com/01.jpg"
+        );
+        expect(componente.state().lances).toEqual([10, 20]);
     });
 
     it("Deve simular formulário e alterar o estado do componente", () => {
-        const component = mount(
+        const componente = mount(
             <Router>
                 <AdicionarProduto />
             </Router>
         );
 
-        component
+        componente
             .find("input")
             .at(0)
             .simulate("change", {
@@ -51,7 +53,7 @@ describe("Teste da renderização do componente Produto", () => {
                 }
             });
 
-        component
+        componente
             .find("input")
             .at(1)
             .simulate("change", {
@@ -60,7 +62,7 @@ describe("Teste da renderização do componente Produto", () => {
                 }
             });
 
-        component
+        componente
             .find("input")
             .at(2)
             .simulate("change", {
@@ -69,24 +71,24 @@ describe("Teste da renderização do componente Produto", () => {
                 }
             });
 
-        component.find(".formulario-produto").simulate("submit");
+        componente.find(".formulario-produto").simulate("submit");
 
         expect(
-            component
+            componente
                 .find("input")
                 .at(0)
                 .prop("value")
         ).toEqual("Aplicação 01");
 
         expect(
-            component
+            componente
                 .find("input")
                 .at(1)
                 .prop("value")
         ).toEqual(parseInt([10, 20]));
 
         expect(
-            component
+            componente
                 .find("input")
                 .at(2)
                 .prop("value")

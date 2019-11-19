@@ -5,8 +5,8 @@ import App from "../App";
 
 describe("Testes do App.js", () => {
     it("Deve renderizar o componente App", () => {
-        const wrapper = shallow(<App />);
+        const componente = shallow(<App />);
 
-        expect(wrapper.exists()).toBe(true);
+        expect(componente.exists()).toBe(true);
     });
 });

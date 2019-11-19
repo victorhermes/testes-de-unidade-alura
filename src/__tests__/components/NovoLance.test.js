@@ -12,16 +12,14 @@ describe("Teste da renderização do componente NovoLance", () => {
     };
 
     it("Deve iniciar com estado vazio", () => {
-        const wrapper = shallow(<NovoLance match={match} />);
+        const componente = shallow(<NovoLance match={match} />);
 
-        expect(wrapper).toEqual({});
-        expect(wrapper.state()).toEqual({
+        expect(componente).toEqual({});
+        expect(componente.state()).toEqual({
             dados: [],
             novoLance: "",
             id: null
         });
-
-        wrapper.unmount();
     });
 
     it("Deve executar o componentDidMount", () => {
@@ -32,14 +30,14 @@ describe("Teste da renderização do componente NovoLance", () => {
         });
         jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
-        const wrapper = shallow(<NovoLance match={match} />);
+        const componente = shallow(<NovoLance match={match} />);
 
         expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(global.fetch).toHaveBeenCalledWith(
             "http://localhost:3000/leilao/1"
         );
 
-        expect(wrapper.state()).toEqual({
+        expect(componente.state()).toEqual({
             dados: [],
             novoLance: "",
             id: null
@@ -49,13 +47,13 @@ describe("Teste da renderização do componente NovoLance", () => {
     });
 
     it("Deve incluir dados no estado do componente", () => {
-        const wrapper = mount(
+        const componente = mount(
             <Router>
                 <NovoLance match={match} />
             </Router>
         );
 
-        wrapper.setState({
+        componente.setState({
             dados: [
                 {
                     titulo: "Produto Nº1",
@@ -69,8 +67,8 @@ describe("Teste da renderização do componente NovoLance", () => {
             id: 1
         });
 
-        expect(wrapper).toEqual({});
-        expect(wrapper.state().dados).toEqual([
+        expect(componente).toEqual({});
+        expect(componente.state().dados).toEqual([
             {
                 titulo: "Produto Nº1",
                 imagem:
@@ -79,16 +77,22 @@ describe("Teste da renderização do componente NovoLance", () => {
                 id: 1
             }
         ]);
-        expect(wrapper.state().novoLance).toEqual("20");
-        expect(wrapper.state().id).toEqual(1);
+        expect(componente.state().novoLance).toEqual("20");
+        expect(componente.state().id).toEqual(1);
     });
 
     it("Deve simular formulário e alterar o estado do componente", () => {
-        const component = shallow(<NovoLance match={match} />);
+        const componente = shallow(<NovoLance match={match} />);
 
-        const spy = jest.spyOn(component.instance(), "submeterProduto");
+        const spy = jest.spyOn(componente.instance(), "submeterProduto");
 
-        component
+        componente.setState({
+            dados: {
+                lances: [10, 20]
+            }
+        });
+
+        componente
             .find("input")
             .at(0)
             .simulate("change", {
@@ -97,12 +101,12 @@ describe("Teste da renderização do componente NovoLance", () => {
                 }
             });
 
-        component
+        componente
             .find(".formulario-produto")
             .simulate("submit", { preventDefault: () => {} });
 
         expect(
-            component
+            componente
                 .find("input")
                 .at(0)
                 .prop("value")

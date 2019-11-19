@@ -7,21 +7,21 @@ import ListarProdutos from "../../componentes/ListarProdutos";
 
 describe("Teste da renderização do componente Conteudo", () => {
     it("Deve haver o componente Conteudo", () => {
-        const wrapper = shallow(<Conteudo />);
+        const componente = shallow(<Conteudo />);
 
-        expect(wrapper.exists()).toBe(true);
+        expect(componente.exists()).toBe(true);
     });
 
     it("Deve renderizar o componente Menu", () => {
-        const wrapper = shallow(<Conteudo />);
+        const componente = shallow(<Conteudo />);
 
-        expect(wrapper.find(Menu)).toHaveLength(1);
+        expect(componente.find(Menu)).toHaveLength(1);
     });
 
     it("Deve renderizar o componente ListarProdutos", () => {
-        const wrapper = shallow(<Conteudo />);
+        const componente = shallow(<Conteudo />);
 
-        expect(wrapper.find(ListarProdutos)).toHaveLength(1);
+        expect(componente.find(ListarProdutos)).toHaveLength(1);
     });
 
     it("Deve executar o componentDidMount", () => {
@@ -32,14 +32,14 @@ describe("Teste da renderização do componente Conteudo", () => {
         });
         jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
-        const wrapper = shallow(<Conteudo />);
+        const componente = shallow(<Conteudo />);
 
         expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(global.fetch).toHaveBeenCalledWith(
             "http://localhost:3000/leilao"
         );
 
-        expect(wrapper.state()).toEqual({
+        expect(componente.state()).toEqual({
             moeda: "R$",
             dados: []
         });

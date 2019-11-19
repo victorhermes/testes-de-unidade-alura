@@ -5,16 +5,16 @@ import Menu from "../../componentes/Menu";
 
 describe("Testes do menu", () => {
     it("Deve haver o componente menu", () => {
-        const wrapper = shallow(<Menu />);
+        const componente = shallow(<Menu />);
 
-        expect(wrapper.exists()).toBe(true);
+        expect(componente.exists()).toBe(true);
     });
 
     it("Deve renderizar o menu", () => {
-        const wrapper = shallow(<Menu />);
+        const componente = shallow(<Menu />);
 
-        expect(wrapper.find("Link")).toHaveLength(2);
-        expect(wrapper.find(".link-produto").text()).toEqual(
+        expect(componente.find("Link")).toHaveLength(2);
+        expect(componente.find(".link-produto").text()).toEqual(
             "Adicionar Produto"
         );
     });

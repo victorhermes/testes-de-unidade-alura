@@ -18,14 +18,14 @@ describe("Teste da renderização do componente Produto", () => {
         });
         jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
-        const wrapper = shallow(<Produto match={match} />);
+        const componente = shallow(<Produto match={match} />);
 
         expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(global.fetch).toHaveBeenCalledWith(
             "http://localhost:3000/leilao/1"
         );
 
-        expect(wrapper.state()).toEqual({
+        expect(componente.state()).toEqual({
             moeda: "R$",
             dados: []
         });
