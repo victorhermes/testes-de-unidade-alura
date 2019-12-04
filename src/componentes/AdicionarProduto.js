@@ -22,9 +22,13 @@ export default class AdicionarProduto extends Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ titulo, imagem, lances: [lances] })
-        }).then(function() {
-            history.push("/");
-        });
+        })
+            .then(function() {
+                history.push("/");
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     render() {

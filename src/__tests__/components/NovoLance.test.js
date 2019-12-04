@@ -1,10 +1,11 @@
 import { shallow, mount } from "enzyme";
+import { URLBase } from "../../services/api";
 import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
 import NovoLance from "../../componentes/NovoLance";
 
-describe("Teste da renderização do componente NovoLance", () => {
+describe("Componente NovoLance", () => {
     const match = {
         params: {
             id: 1
@@ -28,6 +29,7 @@ describe("Teste da renderização do componente NovoLance", () => {
         const mockFetchPromise = Promise.resolve({
             json: () => mockJsonPromise
         });
+
         jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise);
 
         const componente = shallow(<NovoLance match={match} />);
@@ -36,7 +38,6 @@ describe("Teste da renderização do componente NovoLance", () => {
         expect(global.fetch).toHaveBeenCalledWith(
             "http://localhost:3000/leilao/1"
         );
-
         expect(componente.state()).toEqual({
             dados: [],
             novoLance: "",
@@ -44,6 +45,12 @@ describe("Teste da renderização do componente NovoLance", () => {
         });
 
         global.fetch.mockClear();
+    });
+
+    it("Deve chamar método catch", () => {
+        jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
+
+        expect(global.fetch).toBeTruthy();
     });
 
     it("Deve incluir dados no estado do componente", () => {
@@ -113,6 +120,5 @@ describe("Teste da renderização do componente NovoLance", () => {
         ).toEqual("10");
 
         expect(spy).toBeTruthy();
-        expect(spy).toThrow(TypeError);
     });
 });

@@ -17,6 +17,9 @@ export default class AdicionarProduto extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ dados: data, id });
+            })
+            .catch(error => {
+                console.log(error);
             });
     }
 
@@ -36,9 +39,13 @@ export default class AdicionarProduto extends Component {
                 imagem,
                 lances: [...lances, parseInt(novoLance)]
             })
-        }).then(function() {
-            history.push(`/produto/${id}`);
-        });
+        })
+            .then(function() {
+                history.push(`/produto/${id}`);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
 
     render() {

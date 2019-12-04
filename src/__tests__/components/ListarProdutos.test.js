@@ -2,7 +2,7 @@ import { shallow, mount } from "enzyme";
 import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
-import ListarProdutos from "../../componentes/ListarProdutos";
+import ListaProdutos from "../../componentes/ListaProdutos";
 
 describe("Teste da listagem dos produtos", () => {
     const dados = [
@@ -23,19 +23,19 @@ describe("Teste da listagem dos produtos", () => {
     ];
 
     it("Deve haver o componente ListarProdutos", () => {
-        const componente = shallow(<ListarProdutos />);
+        const componente = shallow(<ListaProdutos />);
 
         expect(componente.exists()).toBe(true);
     });
 
     it("Deve renderizar os produtos", () => {
-        const componente = shallow(<ListarProdutos dados={dados} />);
+        const componente = shallow(<ListaProdutos dados={dados} />);
 
         expect(componente.find("section")).toHaveLength(dados.length);
     });
 
-    it("Não deve quebrar com array dados vazio", () => {
-        const componente = shallow(<ListarProdutos dados={[]} />);
+    it("Deve ser renderizado quando receber array de dados vazio", () => {
+        const componente = shallow(<ListaProdutos dados={[]} />);
 
         expect(componente.find("section")).toHaveLength(0);
     });
@@ -43,29 +43,10 @@ describe("Teste da listagem dos produtos", () => {
     it("Deve haver o botão Conferir", () => {
         const componente = mount(
             <Router>
-                <ListarProdutos dados={dados} />
+                <ListaProdutos dados={dados} />
             </Router>
         );
 
-        expect(componente.find("a")).toHaveLength(2);
-
-        expect(
-            componente
-                .find("a")
-                .at(0)
-                .text()
-        ).toEqual("Conferir");
-
-        expect(
-            componente
-                .find("a")
-                .at(1)
-                .text()
-        ).toEqual("Conferir");
-    });
-
-    it("Deve retornar o maior lance", () => {
-        const lances = [50, 40, 30, 5, 20, 200, 100];
-        expect(Math.max(...lances)).toEqual(200);
+        expect(componente).toMatchSnapshot();
     });
 });

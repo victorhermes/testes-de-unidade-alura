@@ -1,7 +1,9 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import ListarUmProduto from "../../componentes/ListarUmProduto";
+import ListarUmProduto, {
+    subtrairLances
+} from "../../componentes/ListarUmProduto";
 
 describe("Deve renderizar um único produto", () => {
     const dados = [
@@ -15,8 +17,12 @@ describe("Deve renderizar um único produto", () => {
     ];
 
     it("Deve renderizar os produtos", () => {
-        const wrapper = shallow(<ListarUmProduto dados={dados} />);
+        const componente = shallow(<ListarUmProduto dados={dados} />);
 
-        expect(wrapper.find("section")).toHaveLength(dados.length);
+        expect(componente.find("section")).toHaveLength(dados.length);
+    });
+
+    it("Deve fazer a subtração dos lances", () => {
+        expect(subtrairLances(10, 5)).toBe(5);
     });
 });

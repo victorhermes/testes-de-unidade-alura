@@ -2,8 +2,7 @@ import { shallow } from "enzyme";
 import React from "react";
 
 import Conteudo from "../../componentes/Conteudo";
-import Menu from "../../componentes/Menu";
-import ListarProdutos from "../../componentes/ListarProdutos";
+import ListaProdutos from "../../componentes/ListaProdutos";
 
 describe("Teste da renderização do componente Conteudo", () => {
     it("Deve haver o componente Conteudo", () => {
@@ -12,19 +11,19 @@ describe("Teste da renderização do componente Conteudo", () => {
         expect(componente.exists()).toBe(true);
     });
 
-    it("Deve renderizar o componente Menu", () => {
+    it("Deve renderizar o componente Conteudo", () => {
         const componente = shallow(<Conteudo />);
 
-        expect(componente.find(Menu)).toHaveLength(1);
+        expect(componente).toMatchSnapshot();
     });
 
-    it("Deve renderizar o componente ListarProdutos", () => {
+    it("Deve renderizar o componente ListaProdutos", () => {
         const componente = shallow(<Conteudo />);
 
-        expect(componente.find(ListarProdutos)).toHaveLength(1);
+        expect(componente.find(ListaProdutos)).toHaveLength(1);
     });
 
-    it("Deve executar o componentDidMount", () => {
+    it("Componente Conteudo deve chamar API via componentDidMount", () => {
         const mockData = {};
         const mockJsonPromise = Promise.resolve(mockData);
         const mockFetchPromise = Promise.resolve({

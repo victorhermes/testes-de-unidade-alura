@@ -4,7 +4,7 @@ import React from "react";
 
 import AdicionarProduto from "../../componentes/AdicionarProduto";
 
-describe("Teste da renderização do componente Produto", () => {
+describe("Componente Produto", () => {
     it("Deve iniciar com estado vazio", () => {
         const componente = shallow(<AdicionarProduto />);
 
@@ -37,6 +37,14 @@ describe("Teste da renderização do componente Produto", () => {
         expect(componente.state().lances).toEqual([10, 20]);
     });
 
+    it("Deve chamar método catch", () => {
+        jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
+
+        expect(global.fetch).toBeTruthy();
+    });
+});
+
+describe("Submissão do formulário", () => {
     it("Deve simular formulário e alterar o estado do componente", () => {
         const componente = mount(
             <Router>

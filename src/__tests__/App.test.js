@@ -8,5 +8,6 @@ describe("Testes do App.js", () => {
         const componente = shallow(<App />);
 
         expect(componente.exists()).toBe(true);
+        expect(componente).toMatchSnapshot();
     });
 });

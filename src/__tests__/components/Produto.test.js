@@ -4,7 +4,7 @@ import React from "react";
 import Produto from "../../componentes/Produto";
 
 describe("Teste da renderização do componente Produto", () => {
-    it("Deve executar o componentDidMount", () => {
+    it("Componente Produto deve chamar API via componentDidMount", () => {
         const match = {
             params: {
                 id: 1
