@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-const subtrairLances = (num1, num2) => {
+export const subtrairLances = (num1, num2) => {
     return num1 - num2;
 };
 

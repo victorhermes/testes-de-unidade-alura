@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { URLBase } from "../services/api";
 
 import Menu from "./Menu";
-import ListarProdutos from "./ListarProdutos";
+import ListarProdutos from "./ListaProdutos";
 
 import "../css/Conteudo.css";
 
