@@ -1,4 +1,5 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
 import Conteudo from "../../componentes/Conteudo";
@@ -11,8 +12,12 @@ describe("Teste da renderização do componente Conteudo", () => {
         expect(componente.exists()).toBe(true);
     });
 
-    it("Deve renderizar o componente Conteudo", () => {
-        const componente = shallow(<Conteudo />);
+    it("Deve haver o componente Conteudo", () => {
+        const componente = mount(
+            <Router>
+                <Conteudo />
+            </Router>
+        );
 
         expect(componente).toMatchSnapshot();
     });

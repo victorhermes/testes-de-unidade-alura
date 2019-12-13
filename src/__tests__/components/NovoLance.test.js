@@ -1,5 +1,4 @@
 import { shallow, mount } from "enzyme";
-import { URLBase } from "../../services/api";
 import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 
