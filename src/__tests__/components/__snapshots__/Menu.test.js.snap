@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes do menu Deve renderizar o menu 1`] = `ShallowWrapper {}`;

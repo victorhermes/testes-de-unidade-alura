@@ -1,16 +1,16 @@
 import React from "react";
-import { Router } from "react-router-dom";
 import Routes from "./routes/routes";
-import history from "./routes/history";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import "./css/App.css";
 
 function App() {
     return (
-        <Router history={history}>
-            <div className="app">
-                <Routes />
-            </div>
-        </Router>
+        <div className="app">
+            <ToastContainer />
+            <Routes />
+        </div>
     );
 }
 

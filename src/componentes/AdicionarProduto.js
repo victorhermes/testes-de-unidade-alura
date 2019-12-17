@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import { toast } from "react-toastify";
 import { URLBase } from "../services/api";
 import history from "../routes/history";
 import "../css/AdicionarProduto.css";
@@ -24,10 +25,15 @@ export default class AdicionarProduto extends Component {
             body: JSON.stringify({ titulo, imagem, lances: [lances] })
         })
             .then(function() {
+                toast.success("Produto adicionado", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
                 history.push("/");
             })
-            .catch(function(error) {
-                console.error(error);
+            .catch(error => {
+                toast.error("Ops, algo deu errado", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
             });
     };
 
@@ -35,6 +41,7 @@ export default class AdicionarProduto extends Component {
         return (
             <Fragment>
                 <Menu />
+
                 <div>
                     <form
                         onSubmit={this.submeterProduto}

@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react";
+import { toast } from "react-toastify";
 import { URLBase } from "../services/api";
 import history from "../routes/history";
 import Menu from "./Menu";
@@ -18,7 +19,11 @@ export default class AdicionarProduto extends Component {
             .then(data => {
                 this.setState({ dados: data, id });
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                toast.error("Ops, algo deu errado", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+            });
     }
 
     submeterProduto = e => {
@@ -39,10 +44,15 @@ export default class AdicionarProduto extends Component {
             })
         })
             .then(function() {
+                toast.success("Lance adicionado", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
                 history.push(`/produto/${id}`);
             })
-            .catch(function(error) {
-                console.error(error);
+            .catch(error => {
+                toast.error("Ops, algo deu errado", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
             });
     };
 
