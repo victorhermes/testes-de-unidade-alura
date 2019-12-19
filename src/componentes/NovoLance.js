@@ -26,6 +26,13 @@ export default class AdicionarProduto extends Component {
             });
     }
 
+    adicionaLance = id => {
+        toast.success("Lance adicionado", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        history.push(`/produto/${id}`);
+    };
+
     submeterProduto = e => {
         e.preventDefault();
         const { titulo, imagem, lances } = this.state.dados;
@@ -43,12 +50,7 @@ export default class AdicionarProduto extends Component {
                 lances: [...lances, parseInt(novoLance)]
             })
         })
-            .then(function() {
-                toast.success("Lance adicionado", {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                history.push(`/produto/${id}`);
-            })
+            .then(this.adicionaLance())
             .catch(error => {
                 toast.error("Ops, algo deu errado", {
                     position: toast.POSITION.TOP_RIGHT

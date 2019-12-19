@@ -12,6 +12,13 @@ export default class AdicionarProduto extends Component {
         lances: []
     };
 
+    adicionaProduto = () => {
+        toast.success("Produto adicionado", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        history.push("/");
+    };
+
     submeterProduto = e => {
         e.preventDefault();
         const { titulo, imagem, lances } = this.state;
@@ -24,12 +31,7 @@ export default class AdicionarProduto extends Component {
             },
             body: JSON.stringify({ titulo, imagem, lances: [lances] })
         })
-            .then(function() {
-                toast.success("Produto adicionado", {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                history.push("/");
-            })
+            .then(this.adicionaProduto())
             .catch(error => {
                 toast.error("Ops, algo deu errado", {
                     position: toast.POSITION.TOP_RIGHT

@@ -46,6 +46,14 @@ describe("Componente NovoLance", () => {
         global.fetch.mockClear();
     });
 
+    it("Deve chamar método then", () => {
+        const componente = shallow(<NovoLance match={match} />);
+
+        const spy = jest.spyOn(componente.instance(), "adicionaLance");
+
+        expect(spy).toBeTruthy();
+    });
+
     it("Deve chamar método catch", () => {
         jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
 
@@ -87,10 +95,16 @@ describe("Componente NovoLance", () => {
         expect(componente.state().id).toEqual(1);
     });
 
-    it("Deve simular formulário e alterar o estado do componente", () => {
+    it("Deve simular formulário", () => {
         const componente = shallow(<NovoLance match={match} />);
 
         const spy = jest.spyOn(componente.instance(), "submeterProduto");
+
+        expect(spy).toBeTruthy();
+    });
+
+    it("Deve alterar o estado do componente", () => {
+        const componente = shallow(<NovoLance match={match} />);
 
         componente.setState({
             dados: {
@@ -117,7 +131,5 @@ describe("Componente NovoLance", () => {
                 .at(0)
                 .prop("value")
         ).toEqual("10");
-
-        expect(spy).toBeTruthy();
     });
 });
