@@ -26,7 +26,34 @@ export default class AdicionarProduto extends Component {
             });
     }
 
-    submeterProduto = e => {
+    adicionaLance = id => {
+        toast.success("Lance adicionado", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        history.push(`/produto/${id}`);
+    };
+
+    adicionaLanceErro = error => {
+        toast.error(error, {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+
+    validarDados = e => {
+        e.preventDefault();
+        const { novoLance } = this.state;
+        const { lances } = this.state.dados;
+
+        if (novoLance <= Math.max(...lances)) {
+            toast.error(`Digite um lance maior que ${Math.max(...lances)}`, {
+                position: toast.POSITION.TOP_RIGHT
+            });
+        } else {
+            this.submeterLance(e);
+        }
+    };
+
+    submeterLance = e => {
         e.preventDefault();
         const { titulo, imagem, lances } = this.state.dados;
         const { id, novoLance } = this.state;
@@ -43,17 +70,8 @@ export default class AdicionarProduto extends Component {
                 lances: [...lances, parseInt(novoLance)]
             })
         })
-            .then(function() {
-                toast.success("Lance adicionado", {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                history.push(`/produto/${id}`);
-            })
-            .catch(error => {
-                toast.error("Ops, algo deu errado", {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-            });
+            .then(() => this.adicionaLance(id))
+            .catch(() => this.adicionaLanceErro("Ops, algo deu errado"));
     };
 
     render() {
@@ -62,7 +80,7 @@ export default class AdicionarProduto extends Component {
                 <Menu />
                 <div>
                     <form
-                        onSubmit={this.submeterProduto}
+                        onSubmit={this.validarDados}
                         className="formulario-produto"
                     >
                         <input

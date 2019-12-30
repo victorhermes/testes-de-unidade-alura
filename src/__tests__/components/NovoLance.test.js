@@ -4,13 +4,13 @@ import React from "react";
 
 import NovoLance from "../../componentes/NovoLance";
 
-describe("Componente NovoLance", () => {
-    const match = {
-        params: {
-            id: 1
-        }
-    };
+const match = {
+    params: {
+        id: 1
+    }
+};
 
+describe("Componente NovoLance", () => {
     it("Deve iniciar com estado vazio", () => {
         const componente = shallow(<NovoLance match={match} />);
 
@@ -44,12 +44,6 @@ describe("Componente NovoLance", () => {
         });
 
         global.fetch.mockClear();
-    });
-
-    it("Deve chamar método catch", () => {
-        jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
-
-        expect(global.fetch).toBeTruthy();
     });
 
     it("Deve incluir dados no estado do componente", () => {
@@ -86,11 +80,35 @@ describe("Componente NovoLance", () => {
         expect(componente.state().novoLance).toEqual("20");
         expect(componente.state().id).toEqual(1);
     });
+});
 
-    it("Deve simular formulário e alterar o estado do componente", () => {
+describe("Teste dos métodos then e catch do componente NovoLance", () => {
+    it("Deve retornar a função adicionaLance com mensagem de sucesso", () => {
         const componente = shallow(<NovoLance match={match} />);
 
-        const spy = jest.spyOn(componente.instance(), "submeterProduto");
+        const spy = jest.spyOn(componente.instance(), "adicionaLance");
+
+        expect(spy).toBeTruthy();
+    });
+
+    it("Deve retornar um erro caso a função submeterLance de reject", () => {
+        jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
+
+        expect(global.fetch).toBeTruthy();
+    });
+});
+
+describe("Teste para adicionar um novo lance", () => {
+    it("Deve simular formulário", () => {
+        const componente = shallow(<NovoLance match={match} />);
+
+        const spy = jest.spyOn(componente.instance(), "submeterLance");
+
+        expect(spy).toBeTruthy();
+    });
+
+    it("Deve alterar o estado do componente", () => {
+        const componente = shallow(<NovoLance match={match} />);
 
         componente.setState({
             dados: {
@@ -117,7 +135,5 @@ describe("Componente NovoLance", () => {
                 .at(0)
                 .prop("value")
         ).toEqual("10");
-
-        expect(spy).toBeTruthy();
     });
 });
