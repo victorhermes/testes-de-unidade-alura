@@ -36,8 +36,10 @@ describe("Componente Produto", () => {
         );
         expect(componente.state().lances).toEqual([10, 20]);
     });
+});
 
-    it("Deve chamar método then", () => {
+describe("Teste dos métodos then e catch do componente Produto", () => {
+    it("Deve retornar a função adicionaProduto com mensagem de sucesso", () => {
         const componente = shallow(<AdicionarProduto />);
 
         const spy = jest.spyOn(componente.instance(), "adicionaProduto");
@@ -45,7 +47,7 @@ describe("Componente Produto", () => {
         expect(spy).toBeTruthy();
     });
 
-    it("Deve chamar método catch", () => {
+    it("Deve retornar um erro caso a função submeterProduto de reject", () => {
         jest.spyOn(global, "fetch").mockImplementation(() => Promise.reject());
 
         expect(global.fetch).toBeTruthy();

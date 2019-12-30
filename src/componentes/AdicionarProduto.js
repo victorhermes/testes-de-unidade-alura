@@ -12,11 +12,39 @@ export default class AdicionarProduto extends Component {
         lances: []
     };
 
+    validarDados = e => {
+        e.preventDefault();
+        const { titulo, imagem, lances } = this.state;
+
+        if (titulo === "") {
+            this.adicionaProdutoErro("Digite um titulo");
+            return false;
+        }
+
+        if (lances < 1 || lances === null) {
+            this.adicionaProdutoErro("Digite o lance inicial");
+            return false;
+        }
+
+        if (imagem === "") {
+            this.adicionaProdutoErro("Digite o link da imagem");
+            return false;
+        }
+
+        return this.submeterProduto(e);
+    };
+
     adicionaProduto = () => {
         toast.success("Produto adicionado", {
             position: toast.POSITION.TOP_RIGHT
         });
         history.push("/");
+    };
+
+    adicionaProdutoErro = error => {
+        toast.error(error, {
+            position: toast.POSITION.TOP_RIGHT
+        });
     };
 
     submeterProduto = e => {
@@ -31,12 +59,8 @@ export default class AdicionarProduto extends Component {
             },
             body: JSON.stringify({ titulo, imagem, lances: [lances] })
         })
-            .then(this.adicionaProduto())
-            .catch(error => {
-                toast.error("Ops, algo deu errado", {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-            });
+            .then(() => this.adicionaProduto())
+            .catch(() => this.adicionaProdutoErro("Ops, algo deu errado"));
     };
 
     render() {
@@ -46,7 +70,7 @@ export default class AdicionarProduto extends Component {
 
                 <div>
                     <form
-                        onSubmit={this.submeterProduto}
+                        onSubmit={this.validarDados}
                         className="formulario-produto"
                     >
                         <input
@@ -58,7 +82,6 @@ export default class AdicionarProduto extends Component {
                             }
                             placeholder="Título do produto"
                             className="entrada-produto"
-                            required
                         />
                         <input
                             type="number"
@@ -71,7 +94,6 @@ export default class AdicionarProduto extends Component {
                             }
                             placeholder="Lance inicial"
                             className="entrada-produto"
-                            required
                         />
                         <input
                             type="text"
@@ -82,7 +104,6 @@ export default class AdicionarProduto extends Component {
                             }
                             placeholder="Link da imagem"
                             className="entrada-produto"
-                            required
                         />
                         <input
                             type="submit"

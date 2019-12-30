@@ -10,7 +10,14 @@
         600,
         800,
         850,
-        900
+        900,
+        901,
+        902,
+        903,
+        904,
+        905,
+        906,
+        907
       ],
       "id": 1
     },
@@ -21,7 +28,11 @@
         50,
         65,
         85,
-        95
+        95,
+        96,
+        97,
+        98,
+        99
       ],
       "id": 2
     },
@@ -41,9 +52,20 @@
       "titulo": "Pizza com frango",
       "imagem": "https://cdn.guidingtech.com/imager/media/assets/HD-Mouth-Watering-Food-Wallpapers-for-Desktop-12_acdb3e4bb37d0e3bcc26c97591d3dd6b.jpg",
       "lances": [
-        78
+        78,
+        79
       ],
       "id": 4
+    },
+    {
+      "titulo": "Carrinho",
+      "imagem": "http://joanninha.com.br/_midias/jpg/1_carrinho_vermelho-5290-4f284a19d8f79.jpg",
+      "lances": [
+        1,
+        2,
+        3
+      ],
+      "id": 5
     }
   ]
 }
