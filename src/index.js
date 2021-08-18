@@ -5,7 +5,7 @@ import history from "./routes/history";
 
 import "./css/index.css";
 import App from "./App";
- 
+
 ReactDOM.render(
     <Router history={history}>
         <App />
