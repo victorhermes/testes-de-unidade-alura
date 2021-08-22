@@ -1,7 +1,7 @@
 {
     "leilao": [
         {
-            "titulo": "TV antiga",
+            "titulo": "TV",
             "imagem": "https://img.freepik.com/fotos-gratis/tv-a-cores-antiga_1511-69.jpg",
             "lances": [100, 150, 250, 600, 800, 850, 900],
             "id": 1
